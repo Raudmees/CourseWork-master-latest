@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.TextView;
 
@@ -59,6 +60,7 @@ public class NoteViewActivity extends AppCompatActivity {
 
         titleText.setText(note.getTitle());
         contentText.setText(note.getContent());
+        contentText.setMovementMethod(new ScrollingMovementMethod());
         dateText.setText("Creation date: "+dateText1);
         if (strDate2==0){
             editDateText.setVisibility(View.INVISIBLE);
